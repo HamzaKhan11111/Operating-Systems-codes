@@ -1,0 +1,121 @@
+|************Shell Scripting Notes**********|
+|********************************************|
+
+//commands to run shell script
+sudo chmod +x script.sh
+sh script.sh
+bash script.sh
+./script.sh
+
+
+//***************variable declaration
+var=10
+echo $var //10
+
+//***************variable declaration with spaces
+var="Hello World"
+echo $var //Hello World
+
+//***************if else
+if [ $var -eq 10 ]
+then
+    echo "Equal"
+else
+    echo "Not Equal"
+fi
+
+//***************for loop
+for i in 1 2 3 4 5
+do
+    echo $i
+done
+
+//***************for loop with range
+for i in {1..5}
+do
+    echo $i
+done
+
+//***************for loop with range and increment
+for i in {1..10..2}
+do
+    echo $i
+done
+
+//***************while loop
+i=1
+while [ $i -le 5 ]
+do
+    echo $i
+    i=$((i+1))
+done
+
+//***************while loop with read
+while read p
+do
+    echo $p
+done < file.txt
+
+//***************while loop with read and if
+while read p
+do
+    if [ $p == "Hello" ]
+    then
+        echo "Hello"
+    fi
+done < file.txt
+
+//*************** and
+if [ $var1 -eq 10 -a $var2 -eq 20 ]
+then
+    echo "Equal"
+else
+    echo "Not Equal"
+fi
+//*************** or
+if [ $var1 -eq 10 -o $var2 -eq 20 ]
+then
+    echo "Equal"
+else
+    echo "Not Equal"
+fi
+//*************** not
+if [ ! $var1 -eq 10 ]
+then
+    echo "Equal"
+else
+    echo "Not Equal"
+fi
+
+//***************case
+case $var in
+    1) 
+        echo "One"
+        ;; //no need of break
+    2)
+        echo "Two"
+        ;;
+    *)
+        echo "Not One or Two"
+        ;;
+esac
+
+//***************function
+function_name(){
+    echo "Hello"
+}
+function_name
+
+//***************function with parameters
+function_name(){
+    echo "Hello $1"
+}
+function_name "World"
+
+//***************function with return
+function_name(){
+    return 10
+}
+function_name
+echo $? //? is used to get the return value of the function
+

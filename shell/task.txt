@@ -1,0 +1,36 @@
+echo "task 1"
+echo ""
+count=0
+for (( i=3;i>0;i-- ))
+	do
+		for (( j=i;j<3;j++ ))
+		do
+			echo -n " "
+		done
+		
+		for (( k=5-count;k>0;k-- ))
+		do
+			echo -n "*"
+		done
+		let count++
+		let count++
+		echo ""
+			
+	done
+count=3
+for (( i=2;i>0;i-- ))
+	do
+		for (( j=i;j>1;j-- ))
+		do
+			echo -n " "
+		done
+		
+		for (( k=count;k>0;k-- ))
+		do
+			echo -n "*"
+		done
+		let count++
+		let count++
+		echo ""
+			
+	done
